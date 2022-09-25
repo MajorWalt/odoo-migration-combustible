@@ -1,0 +1,15 @@
+{
+    'name': 'Activos Fijos',
+    'version': '1.0.0',
+    'summary': 'Gestión de activos fijos y útiles',
+    'sequence': -111,
+    'description': """""",
+    'category': 'Contabilidad',
+    'website': '',
+    'depends':[],
+    'data': [],
+    'installable': True,
+    'application': True,
+    'auto_install': False,
+    'license': 'LGPL-3',
+}
