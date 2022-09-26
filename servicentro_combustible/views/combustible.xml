@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+ <!--Form configuration for Combustible 
+<record id = "combustible_form" model = "ir.ui.view">
+    <field name = "name">combustible.form </field>
+    <field name = "model">product.product</field>
+    <field name = "arch" type = "xml">
+  <form create = "false" >
+     <sheet>
+        <field name="image" widget="image" class = "oe_avatar"/>
+            <notebook>
+                <page name="combustible" string="Combustible">
+                    <group>
+
+                    
+                            
+                        <group>
+                            <field name="Nid" />
+                            <field name="nombre" />
+                            
+                        </group>
+                        <group>
+                            <field name="descripcion" />
+                            <field name="state" />
+                            <field name = "color" widget = "color_picker"/>
+                        </group>
+                     </group> 
+                </page>  
+            </notebook>      
+        </sheet>
+      </form>
+    </field>
+</record>
+
+-->
+
+
+
+   <record id="product_template_form_view" model="ir.ui.view">
+        <field name="name">product.template.form.inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+           <xpath expr="//field[@name='detailed_type']" position="after">
+            <field name="Nid" />
+            <field name="nombre" />
+            <field name="descripcion" />
+             <field name="state" />
+            <field name = "color" widget = "color_picker"/>
+                        
+             
+              </xpath>
+        </field>
+    </record>
+
+
+
+<!-- Form configuration for Surtidor -->
+
+
+<record id = "surtidor_form" model = "ir.ui.view">
+<field name = "name">surtidor.form </field>
+<field name = "model">servicentro.surtidor</field>
+<field name = "arch" type = "xml">
+  <form >
+     <sheet>
+        <field name="image" widget="image" class = "oe_avatar"/>
+
+        <notebook>
+        <page name="surtidor" string="Surtidor">
+        <group>
+            <group>
+                 <field name="Nid" />
+                 <field name="localidad" />
+                 <field name="descripcion" />
+                  
+             </group>
+             <group>
+                <field name="ubicacion" />
+                  <field name="tipo_combustible" />
+                  <field name="state" />
+             </group>
+           
+        </group> 
+             </page>  
+             
+            </notebook>      
+        </sheet>
+      </form>
+    </field>
+</record>
+
+
+<!-- Form configuration for Servicio -->
+<record id = "servicio_form" model = "ir.ui.view">
+    <field name = "name">servicio.form </field>
+    <field name = "model">servicentro.servicio</field>
+    <field name = "arch" type = "xml">
+  <form >
+     <sheet>
+        
+            <notebook>
+                <page name="servicio" string="Servicio">
+                    <group>
+                        <group>
+                <field name="Nid" />
+                 <field name="descripcion" />
+                <field name="tipo_combustible" />
+               
+                        </group>
+                        <group>
+                            <field name="codigo" /> 
+                            <field name="id_producto" />
+                            <field name="state" />
+                       </group>
+                     </group> 
+                </page>  
+            </notebook>      
+        </sheet>
+      </form>
+    </field>
+</record>
+
+
+<!-- Form configuration for Operacion -->
+<record id = "operacion_form" model = "ir.ui.view">
+    <field name = "name">operacion.form </field>
+    <field name = "model">servicentro.operacion</field>
+    <field name = "arch" type = "xml">
+  <form >
+     <sheet>
+        
+            <notebook>
+                <page name="operacion" string="Operacion">
+                    <group>
+                        <group>
+                          
+                <field name="Nid" />
+                <field name="name" />
+                <field name="descripcion" />
+                        </group>
+                     </group> 
+                </page>  
+            </notebook>      
+        </sheet>
+      </form>
+    </field>
+</record>
+
+<!-- TREE/List configuration for Combustible -->
+
+<record id = "combustible_tree" model = "ir.ui.view">
+
+<field name = "name">combustible.tree </field>
+<field name = "model">product.product</field>
+<field name = "arch" type = "xml">
+  <tree create="false" edit="false">
+ 
+  <field name="nombre" />
+   <field name="descripcion" />
+    <field name="state" />
+ 
+</tree>
+    </field>
+</record>
+
+
+
+
+<!--
+<record id = "combustible_tree" model = "ir.ui.view">
+
+<field name = "name">combustible.tree </field>
+<field name = "model">reporte.combustibles</field>
+<field name = "arch" type = "xml">
+  <tree string="Ventas Reporte" create = "false" import = "false">
+    <field name="Nid" />
+  <field name="nombre" />
+   <field name="descripcion" />
+    <field name="state" />
+</tree>
+    </field>
+</record>       
+-->
+
+
+
+   <record id="product_template_tree_view" model="ir.ui.view">
+        <field name="name">product.template.tree.inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_tree_view"/>
+        <field name="arch" type="xml">
+            <data>
+                   <xpath expr="//field[@name='name']" position="after">
+              
+            <field name="Nid" />
+            <field name="nombre" />
+                </xpath>
+                
+                 <xpath expr="//field[@name='default_code']" position="replace">
+                          <field name="descripcion" class="oe_inline"/>
+                            <field name="state" class="oe_inline"/>
+                           
+                       </xpath>
+        
+              </data>
+        </field>
+    </record>
+
+
+
+
+
+<!-- TREE/List configuration for Surtidor -->
+
+
+
+<record id = "surtidor_tree" model = "ir.ui.view">
+<field name = "name">surtidor.tree </field>
+<field name = "model">servicentro.surtidor</field>
+<field name = "arch" type = "xml">
+  <tree>
+                 <field name="Nid" />
+                 <field name="localidad" />
+                 <field name="descripcion" />
+                  <field name="state" />
+                  <field name="ubicacion" />
+                  <field name="tipo_combustible" />
+ 
+</tree>
+    </field>
+</record>
+
+<!-- TREE/List configuration for Servicio -->
+
+
+<record id = "servicio_tree" model = "ir.ui.view">
+<field name = "name">servicio.tree </field>
+<field name = "model">servicentro.servicio</field>
+<field name = "arch" type = "xml">
+  <tree>
+                 <field name="Nid" />
+                 <field name="descripcion" />
+                <field name="tipo_combustible" />
+                <field name="codigo" />
+               <field name="id_producto" />
+                  <field name="state" />
+                 
+</tree>
+    </field>
+</record>
+
+<!-- TREE/List configuration for Operation -->
+
+
+<record id = "operacion_tree" model = "ir.ui.view">
+<field name = "name">operacion.tree </field>
+<field name = "model">servicentro.operacion</field>
+<field name = "arch" type = "xml">
+  <tree>
+                 <field name="Nid" />
+                   <field name="name" />
+                 <field name="descripcion" />
+                 
+</tree>
+    </field>
+</record>
+
+
+<!-- Actions defined for Combustible -->
+
+<record id="combustible_action_orders" model="ir.actions.act_window">
+            <field name="name">Lista de Combustibles</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.template</field>
+            <field name="view_mode">tree,kanban</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Insertar un tipo de combustible
+                </p> 
+            </field>
+        </record>
+
+<record id="combustible_action_orders2" model="ir.actions.act_window">
+            <field name="name">Lista de Combustibles</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.template</field>
+            <field name="view_mode">form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Insertar un tipo de combustible
+                </p> 
+            </field>
+        </record>
+
+  
+
+<!-- Actions defined for Surtidor -->
+ <record id="surtidor_action_orders" model="ir.actions.act_window">
+            <field name="name">Lista de Surtidores</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">servicentro.surtidor</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Insertar un surtidor
+                </p> 
+            </field>
+        </record>       
+
+
+<!-- Actions defined for Servicio -->
+ <record id="servicio_action_orders" model="ir.actions.act_window">
+            <field name="name">Lista de Servicios</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">servicentro.servicio</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Insertar un Servicio
+                </p> 
+            </field>
+        </record>               
+<!-- Actions defined for Operation -->
+ <record id="operacion_action_orders" model="ir.actions.act_window">
+            <field name="name">Lista de Operacion</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">servicentro.operacion</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Insertar una Operacion
+                </p> 
+            </field>
+        </record>       
+        
+
+<record id="combustible_kanban" model="ir.ui.view">
+            <field name="name">combustible.kanban</field>
+            <field name="model">servicentro.combustible</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile">
+                           <field name = "id"/>
+                            <field name = "color"/>
+                            <field name="image" />
+                            <field name="nombre"/>
+                                         <field name="descripcion" />
+                                        
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+                                <div class="o_kanban_image">
+                                    <img alt = "o_kanban_image_inner_pic" t-att-src="kanban_image('servicentro.combustible','image',record.id.raw_value)"/>
+                                    </div>
+                                <div t-if="record.nombre.value">
+                                    <strong >
+                                        <t t-esc="record.nombre.value"/>
+                                        </strong>
+                                </div>      
+                                <div t-if="record.descripcion.value">
+                                        <t t-esc="record.descripcion.value"/>
+                                </div>
+                                    <div class="col-7">
+                                         
+                                        
+                                    </div>
+                                    
+                                </div>
+                            
+                               </t>
+                        
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+<record id="surtidor_kanban" model="ir.ui.view">
+            <field name="name">surtidor.kanban</field>
+            <field name="model">servicentro.surtidor</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile">
+                          <field name="descripcion" />                
+                          <field name="tipo_combustible" />
+                          <field name = "id"/>
+                          <field name="image" />
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                               
+                                      
+                                      <div class="o_kanban_image">
+                                    <img alt = "o_kanban_image_inner_pic" t-att-src="kanban_image('servicentro.surtidor','image',record.id.raw_value)"/>
+                                    </div>
+                                    <div t-if="record.descripcion.value">
+                                    <strong >
+                                        <t t-esc="record.descripcion.value"/>
+                                        </strong>
+                                </div>      
+                                <div t-if="record.tipo_combustible.value">
+                                   
+                                        <t t-esc="record.tipo_combustible.value"/>
+                                       
+                                </div>      
+                                     <div class="col-7">
+                                         
+
+                                         
+                                       
+                                         
+                                        
+                                    </div>
+                                    
+                                
+                               </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
+
+
+<!-- Menu Layout  -->
+ <menuitem id="combustible_root"
+             name="Modulo Servicentro"
+            sequence="10"/>
+
+        <menuitem id="comb_root"
+            name="COMBUSTIBLE"
+            parent="combustible_root"
+            sequence="10"/>
+
+             <menuitem id="nomencladores"
+            name="Nomencladores y Configuraciones"
+            parent="combustible_root"
+            sequence="10"/>
+
+            <menuitem id="combustible"
+            name="Nomenclador de Combustible"
+            parent="nomencladores"
+            action = "combustible_action_orders"
+            sequence="10"/>
+
+             <menuitem id="insert_combustible"
+            name="Insertar Combustible"
+            parent="nomencladores"
+            action = "combustible_action_orders2"
+            sequence="11"/>
+
+              <menuitem id="surtidor"
+            name="Nomenclador de Surtidores"
+            parent="nomencladores"
+            action = "surtidor_action_orders"
+            sequence="10"/>
+
+            <menuitem id="servicio"
+            name="Nomenclador de Servicios"
+            parent="nomencladores"
+            action = "servicio_action_orders"
+            sequence="10"/>
+            
+             <menuitem id="operacion"
+            name="Nomenclador de Operaciones"
+            parent="nomencladores"
+            action = "operacion_action_orders"
+            sequence="10"/> 
+
+</odoo>

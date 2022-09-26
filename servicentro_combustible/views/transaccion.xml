@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!-- Form configuration for Carga POS -->
+<record id = "cargapos_form" model = "ir.ui.view">
+    <field name = "name">cargapos.form </field>
+    <field name = "model">servicentro.azucena</field>
+    <field name = "arch" type = "xml">
+  <form >
+     <sheet>
+        
+            <notebook>
+                <page name="combustible" string="Combustible">
+                    <group>
+                        <group>
+                           <field name="turno" />
+                           <field name="localidad" /> 
+                           <field name="idabo" />
+                           
+                            <field name="codigo_op" />
+                            <field name="tipo_oper" />
+                            <field name="brazo" />
+                                
+                            <field name="bin" />
+                            <field name="ticket" />
+                            <field name="no_oper" />
+                            <field name="fecha_cad" />
+                                
+                            <field name="servicio" />
+                            <field name="fecha_oper" />
+                           <!-- <field name="hora" /> -->
+                           </group>
+                           <group>
+                            <field name="precio" />
+                                
+                            <field name="saldo" />
+                            <field name="precioXunit" />
+                            <!-- <field name="moneda" />  -->
+                            <field name="tasa" />
+                            <field name="paidamt" />
+    
+                        </group>
+                     </group> 
+                </page>  
+            </notebook>      
+        </sheet>
+      </form>
+    </field>
+</record>
+
+
+
+
+<!-- Form configuration for turno -->
+<record id = "turno_form" model = "ir.ui.view">
+    <field name = "name">turno.form </field>
+    <field name = "model">servicentro.turno</field>
+    <field name = "arch" type = "xml">
+  <form >
+  <header>
+<button name="generate_coupon_function" type="object" string="Generate" class="btn-primary" />
+ 
+  </header>
+     <sheet>
+        
+            <notebook>
+                <page name="turno" string="Turno">
+                    <group>
+                        <group>
+                         
+   <field name="localidad" />
+<field name="fecha_oper" />
+ 
+ 
+    
+                        </group>
+                     </group> 
+                </page>  
+            </notebook>      
+        </sheet>
+      </form>
+    </field>
+</record>
+
+<!-- TREE/List configuration for Carga POS -->
+
+<record id = "cargapos_tree" model = "ir.ui.view">
+
+<field name = "name">cargapos.tree </field>
+<field name = "model">servicentro.azucena</field>
+<field name = "arch" type = "xml">
+  
+  <tree >
+  <header>
+ <button type = "button" string="fichero" name="fichero" />
+ </header>
+
+
+   <field name="idabo" />
+<field name="tipo_oper" />
+  <field name="ticket" />
+   <field name="servicio" />
+    <field name="precio" />
+    
+    
+ 
+</tree>
+    </field>
+</record>
+
+
+<!-- TREE/List configuration for Carga POS -->
+
+<record id = "turno_tree" model = "ir.ui.view">
+
+<field name = "name">turno.tree </field>
+<field name = "model">servicentro.turno</field>
+<field name = "arch" type = "xml">
+  
+  <tree >
+  
+
+   <field name="localidad" />
+<field name="fecha_oper" />
+ 
+ 
+</tree>
+    </field>
+</record>
+
+
+<!-- Actions defined for Carga POS -->
+
+<record id="cargapos_action_orders" model="ir.actions.act_window">
+            <field name="name">POS Transaccion</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">servicentro.azucena</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Insertar una transaccion
+                </p> 
+            </field>
+        </record>
+
+
+
+<!-- Actions defined for turnos-->
+
+<record id="turnos_action_orders" model="ir.actions.act_window">
+            <field name="name">POS Turno</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">servicentro.turno</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Insertar un turno
+                </p> 
+            </field>
+        </record>
+        
+<!-- Menu Layout  -->
+ 
+
+             <menuitem id="transaccion"
+            name="Transacciones"
+            parent="combustible_root"
+            sequence="10"/>
+
+            <menuitem id="cargapos"
+            name="Transacciones de POS"
+            parent="transaccion"
+            action = "cargapos_action_orders"
+            sequence="10"/>
+
+<menuitem id="turno"
+            name="Turno"
+            parent="transaccion"
+            action = "turnos_action_orders"
+            sequence="10"/>
+
+            
+</odoo>

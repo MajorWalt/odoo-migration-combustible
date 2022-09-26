@@ -1,0 +1,21 @@
+<?xml version ="1.0" encoding = "utf-8"?>
+<odoo>
+
+
+<record model ="ir.module.category" id = "module_category_servicentro">
+<field name = "name"> Modulo Combustible </field>
+<field name = "description"> Gestionar los combustibles y otros entidades y registrar las ventas </field>
+</record>
+
+<record id = "group_servicentro_admin" model = "res.groups">
+<field name ="name">Admin</field>
+<field name = "category_id" ref = "module_category_servicentro"/>
+</record>
+
+
+<record id = "group_servicentro_cajero" model = "res.groups">
+<field name ="name">Cajero</field>
+<field name = "category_id" ref = "module_category_servicentro"/>
+</record>
+
+</odoo>

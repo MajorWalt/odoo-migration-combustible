@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_servicentro_combustible,access.servicentro.combustible,model_servicentro_combustible,,1,1,1,1
+access_servicentro_surtidor,access.servicentro.surtidor,model_servicentro_surtidor,,1,1,1,1
+access_servicentro_servicio,access.servicentro.servicio,model_servicentro_servicio,,1,1,1,1
+access_servicentro_operacion,access.servicentro.operacion,model_servicentro_operacion,,1,1,1,1
+access_servicentro_configpos,access.servicentro.configpos,model_servicentro_configuracionpos,,1,1,1,1
+access_servicentro_pos,access.servicentro.pos,model_servicentro_pos,,1,1,1,1
+access_servicentro_caja,access.servicentro.caja,model_servicentro_caja,,1,1,1,1
+access_servicentro_tarjeta,access.servicentro.tarjeta,model_servicentro_tarjeta,,1,1,1,1
+access_servicentro_idtarjeta,access.servicentro.idtarjeta,model_servicentro_idtarjeta,,1,1,1,1
+access_servicentro_metodoventa,access.servicentro.metodoventa,model_servicentro_metodoventa,,1,1,1,1
+access_servicentro_tipopaga,access.servicentro.tipopaga,model_servicentro_tipopaga,,1,1,1,1
+access_servicentro_bines,access.servicentro.bines,model_servicentro_binestarjeta,,1,1,1,1

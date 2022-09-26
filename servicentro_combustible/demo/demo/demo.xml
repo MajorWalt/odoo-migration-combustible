@@ -1,0 +1,181 @@
+<odoo>
+<data>
+    <record id = "combustible_001" model = "servicentro.combustible">
+        <field name = "Nid">1</field>
+        <field name = "nombre">B-100</field>
+        <field name = "descripcion">Gasolina Super Especial B-100</field>
+        <field name = "state">true</field>
+        <field name = "color">4</field>
+    </record>
+
+     <record id = "combustible_002" model = "servicentro.combustible">
+        <field name = "Nid">2</field>
+        <field name = "nombre">B-94</field>
+        <field name = "descripcion">Gasolina Especial B-94</field>
+        <field name = "state">true</field>
+        <field name = "color">1</field>
+    </record>
+
+ <record id = "combustible_003" model = "servicentro.combustible">
+        <field name = "Nid">3</field>
+        <field name = "nombre">B-90</field>
+        <field name = "descripcion">Gasolina Regular B-90</field>
+        <field name = "state">true</field>
+        <field name = "color">0</field>
+    </record>
+
+ <record id = "combustible_004" model = "servicentro.combustible">
+        <field name = "Nid">4</field>
+        <field name = "nombre">B-83</field>
+        <field name = "descripcion">Gasolina Motor B-83</field>
+        <field name = "state">true</field>
+        <field name = "color">0</field>
+    </record>
+ <record id = "combustible_005" model = "servicentro.combustible">
+        <field name = "Nid">5</field>
+        <field name = "nombre">Diesel Regular</field>
+        <field name = "descripcion">Diesel Regular</field>
+        <field name = "state">true</field>
+        <field name = "color">0</field>  
+    </record>
+ <record id = "combustible_006" model = "servicentro.combustible">
+        <field name = "Nid">6</field>
+        <field name = "nombre">Diesel Especial</field>
+        <field name = "descripcion">Diesel Especial</field>
+        <field name = "state">true</field>
+        <field name = "color">0</field>
+    </record>
+
+     <record id = "combustible_007" model = "servicentro.combustible">
+        <field name = "Nid">7</field>
+        <field name = "nombre">TEST</field>
+        <field name = "descripcion">TEST</field>
+        <field name = "state">TEST</field>
+        <field name = "color">4</field>
+    </record>
+<!--  Surtidores -->
+
+
+
+ <record id = "surtidor_001" model = "servicentro.surtidor">
+        <field name = "Nid">1</field>
+        <field name = "localidad">2AC1</field>
+        <field name = "descripcion">BRAZO 1 DIESEL SC-LA TROCHA</field>
+        <field name = "ubicacion"></field>
+        <field name = "tipo_combustible">Diesel Regular</field>
+        <field name = "state">true</field>
+    </record>
+
+
+
+ <record id = "surtidor_002" model = "servicentro.surtidor">
+        <field name = "Nid">2</field>
+        <field name = "localidad">2AC1</field>
+        <field name = "descripcion">BRAZO 2 DIESEL SC-LA TROCHA</field>
+        <field name = "ubicacion"></field>
+        <field name = "tipo_combustible">Diesel Regular</field>
+        <field name = "state">true</field>
+    </record>
+
+
+
+ <record id = "surtidor_003" model = "servicentro.surtidor">
+        <field name = "Nid">1</field>
+        <field name = "localidad">2AC1</field>
+        <field name = "descripcion">BRAZO 3 GASOLINA B-83 SC-LA TR</field>
+        <field name = "ubicacion"></field>
+        <field name = "tipo_combustible">Gasolina Motor B-83</field>
+        <field name = "state">true</field>
+    </record>
+
+
+ <record id = "surtidor_004" model = "servicentro.surtidor">
+        <field name = "Nid">4</field>
+        <field name = "localidad">2AC1</field>
+        <field name = "descripcion">BRAZO 4 GASOLINA B-83 SC-LA TR</field>
+        <field name = "ubicacion"></field>
+        <field name = "tipo_combustible">Gasolina Motor B-83</field>
+        <field name = "state">true</field>
+    </record>
+
+
+
+ <record id = "config_001" model = "servicentro.configuracionpos">
+        <field name = "id_conf">2AC1</field>
+        <field name = "nombre">COMBUSTIBLE SC-LA TROCHA</field>
+        <field name = "path">/U/S54/XFER/DISCIEGO/POS/TROCHA/Azucena.01</field>
+        <field name = "localidad">2AC1 Combustible SC-LA TROCHA</field>
+        <field name = "red">56 Red 56 SC-LA Trocha</field>
+        <field name = "estado">true</field>
+    </record>
+
+ 
+ <record id = "pos_001" model = "servicentro.pos">
+        <field name = "id_pos">2AC1</field>
+        <field name = "idabo">4.201.010</field>
+        <field name = "descripcion">POS 1 COMBUSTIBLE SC-LA TROCHA</field>
+        <field name = "chapilla">4.000.025.587</field>
+        <field name = "caja">2AAG</field>
+        
+    </record>   
+
+
+ <record id = "caja_001" model = "servicentro.caja">
+        <field name = "caja_no">2AAG</field>
+        <field name = "descripcion">Caja Virtual AG SC-LA TROCHA</field>
+        <field name = "red">56</field>
+        <field name = "no_dev">AG</field>
+        
+    </record>   
+
+<record id = "tarjetas_001" model = "servicentro.tarjeta">
+        <field name = "classificacion">1</field>
+        <field name = "descripcion">Autofinanciada</field>
+        <field name = "state">true</field>
+    
+    </record>   
+    <record id = "tarjetas_002" model = "servicentro.tarjeta">
+        <field name = "classificacion">2</field>
+        <field name = "descripcion">Compensada</field>
+        <field name = "state">true</field>
+    
+    </record>   
+    <record id = "tarjetas_003" model = "servicentro.tarjeta">
+        <field name = "classificacion">3</field>
+        <field name = "descripcion">Privada</field>
+        <field name = "state">true</field>
+    
+    </record>   
+    <record id = "tarjetas_004" model = "servicentro.tarjeta">
+        <field name = "classificacion">4</field>
+        <field name = "descripcion">Afiliada</field>
+        <field name = "state">true</field>
+    
+    </record>   
+    <record id = "tarjetas_005" model = "servicentro.tarjeta">
+        <field name = "classificacion">5</field>
+        <field name = "descripcion">Grupo Electrogeno</field>
+        <field name = "state">true</field>
+    
+    </record>   
+    <record id = "tarjetas_006" model = "servicentro.tarjeta">
+        <field name = "classificacion">6</field>
+        <field name = "descripcion">Transportista</field>
+        <field name = "state">true</field>
+    
+    </record>  
+    <record id = "tarjetas_007" model = "servicentro.tarjeta">
+        <field name = "classificacion">7</field>
+        <field name = "descripcion">Serv. Rodantes</field>
+        <field name = "state">true</field>
+    
+    </record>    
+
+
+    
+
+</data>
+
+
+
+</odoo>

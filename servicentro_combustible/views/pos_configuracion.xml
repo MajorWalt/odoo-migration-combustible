@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!-- Form configuration for POS -->
+<record id = "pos_form" model = "ir.ui.view">
+    <field name = "name">pos.form </field>
+    <field name = "model">servicentro.pos</field>
+    <field name = "arch" type = "xml">
+  <form >
+     <sheet>
+        
+            <notebook>
+                <page name="pos" string="POS">
+                    <group>
+                        <group>
+                            <field name="id_pos" />
+                            <field name="idabo" />
+                            <field name="descripcion" />
+                           
+                        </group>
+                        <group>
+                         <field name="chapilla" />
+                            <field name="caja" />
+                            <field name="descripcioncaja" />
+
+                        </group>
+                     </group> 
+                </page>  
+            </notebook>      
+        </sheet>
+      </form>
+    </field>
+</record>
+
+<!-- Form configuration for Configuration POS -->
+<record id = "configpos_form" model = "ir.ui.view">
+    <field name = "name">pos.form </field>
+    <field name = "model">servicentro.configuracionpos</field>
+    <field name = "arch" type = "xml">
+  <form >
+     <sheet>
+        
+            <notebook>
+                <page name="configpos" string="Configuracion de la Configuracion de POS ">
+                    <group>
+                        <group>
+                            <field name="id_conf" />
+                            <field name="nombre" />
+                            <field name="path" />
+                            
+                        </group>
+                        <group>
+                            <field name="localidad" />
+                            <field name="red" />
+                             <field name="estado" />
+
+                     </group>
+                    </group>  
+                </page>  
+            </notebook>      
+        </sheet>
+      </form>
+    </field>
+</record>
+
+<!-- Form configuration for Configuration Caja -->
+<record id = "caja_form" model = "ir.ui.view">
+    <field name = "name">caja.form </field>
+    <field name = "model">servicentro.caja</field>
+    <field name = "arch" type = "xml">
+  <form >
+     <sheet>
+        
+            <notebook>
+                <page name="caja" string="Configuracion de Caja ">
+                    <group>
+                        <group>
+                          <field name="caja_no" />
+                            <field name="descripcion" />
+                            <field name="red" />
+                           
+
+                        </group>
+                        <group>
+                         <field name="no_dev" />
+                            <field name="dir_com" />
+                             <field name="puerto_ent" />
+                             <field name="puerto_sal" />
+                        </group>
+                     </group> 
+                </page>  
+            </notebook>      
+        </sheet>
+      </form>
+    </field>
+</record>
+
+
+
+<!-- TREE/List configuration for POS -->
+
+<record id = "pos_tree" model = "ir.ui.view">
+<field name = "name">pos.tree </field>
+<field name = "model">servicentro.pos</field>
+<field name = "arch" type = "xml">
+  <tree>
+                            <field name="id_pos" />
+                            <field name="idabo" />
+                            <field name="descripcion" />
+                            <field name="chapilla" />
+                            <field name="caja" />
+                            <field name="descripcioncaja" />
+
+</tree>
+    </field>
+</record>
+
+<!-- TREE/List configuration for POS Configuration -->
+
+<record id = "configpos_tree" model = "ir.ui.view">
+<field name = "name">pos.tree </field>
+<field name = "model">servicentro.configuracionpos</field>
+<field name = "arch" type = "xml">
+  <tree>
+                            <field name="id_conf" />
+                            <field name="nombre" />
+                            <field name="path" />
+                            <field name="localidad" />
+                            <field name="red" />
+                             <field name="estado" />
+
+</tree>
+    </field>
+</record>
+
+<!-- TREE/List configuration for Caja -->
+
+<record id = "caja_tree" model = "ir.ui.view">
+<field name = "name">caja.tree </field>
+<field name = "model">servicentro.caja</field>
+<field name = "arch" type = "xml">
+  <tree>
+                            <field name="caja_no" />
+                            <field name="descripcion" />
+                            <field name="red" />
+                            <field name="no_dev" />
+                            <field name="dir_com" />
+                             <field name="puerto_ent" />
+                             <field name="puerto_sal" />
+
+</tree>
+    </field>
+</record>
+
+
+
+
+<!-- Actions defined for POS -->
+
+<record id="pos_action_orders" model="ir.actions.act_window">
+            <field name="name">Lista de POS</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">servicentro.pos</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Insertar un POS Nuevo
+                </p> 
+            </field>
+        </record>
+
+<!-- Actions defined for POS Configuration -->
+ <record id="configuracion_action_orders" model="ir.actions.act_window">
+            <field name="name">Configuracion de POS</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">servicentro.configuracionpos</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Insertar una configuracion nueva de POS
+                </p> 
+            </field>
+        </record>       
+
+
+<!-- Actions defined for Caja -->
+ <record id="caja_action_orders" model="ir.actions.act_window">
+            <field name="name">Lista de Caja</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">servicentro.caja</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Insertar una Caja
+                </p> 
+            </field>
+        </record>   
+<!-- Menu Layout  -->
+ 
+
+           <!--  <menuitem id="configuracion"
+            name="Configuracion"
+            parent="combustible_root"
+            sequence="10"/>
+-->
+            <menuitem id="configPOS"
+            name="Configuracion de POS"
+            parent="nomencladores"
+            action = "configuracion_action_orders"
+            sequence="20"/>
+
+              <menuitem id="pos"
+            name="Nomenclador de POS"
+            parent="nomencladores"
+            action = "pos_action_orders"
+            sequence="20"/>
+
+            <menuitem id="caja"
+            name="Nomenclador de Caja"
+            parent="nomencladores"
+            action = "caja_action_orders"
+            sequence="20"/>
+            
+</odoo>

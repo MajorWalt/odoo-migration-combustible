@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!-- Form configuration for POS -->
+<record id = "pos_form" model = "ir.ui.view">
+    <field name = "name">pos.form </field>
+    <field name = "model">servicentro.pos</field>
+    <field name = "arch" type = "xml">
+  <form >
+     <sheet>
+        
+            <notebook>
+                <page name="pos" string="POS">
+                    <group>
+                        <group>
+                            <field name="id_pos" />
+                            <field name="idabo" />
+                            <field name="descripcion" />
+                            <field name="chapilla" />
+                            <field name="caja" />
+                        </group>
+                     </group> 
+                </page>  
+            </notebook>      
+        </sheet>
+      </form>
+    </field>
+</record>
+
+<!-- TREE/List configuration for POS -->
+
+<record id = "pos_tree" model = "ir.ui.view">
+<field name = "name">pos.tree </field>
+<field name = "model">servicentro.pos</field>
+<field name = "arch" type = "xml">
+  <tree>
+                            <field name="id_pos" />
+                            <field name="idabo" />
+                            <field name="descripcion" />
+                            <field name="chapilla" />
+                            <field name="caja" />
+
+</tree>
+    </field>
+</record>
+
+
+<!-- TREE/List configuration for Metodo Venta -->
+
+<record id = "metodoventa_tree" model = "ir.ui.view">
+<field name = "name">metodoventa.tree </field>
+<field name = "model">servicentro.metodoventa</field>
+<field name = "arch" type = "xml">
+  <tree>
+                            <field name="metodo" />
+                            <field name="descripcion" />
+                            <field name="estado" />
+                            <field name="cliente" />
+
+
+</tree>
+    </field>
+</record>
+
+
+
+<record id="metodoVenta_kanban" model="ir.ui.view">
+            <field name="name">metodoVenta.kanban</field>
+            <field name="model">servicentro.metodoventa</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile">
+                            <field name="metodo" />
+                            <field name="descripcion" />
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="row">
+                                    <div class="col-7">
+                                         
+                                        <strong><field name="metodo"/></strong>
+                                         <field name="descripcion" />
+                                        
+                                    </div>
+                                    
+                                </div>
+                               </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
+
+<record id="tipopaga_kanban" model="ir.ui.view">
+            <field name="name">tipopaga.kanban</field>
+            <field name="model">servicentro.tipopaga</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile">
+                            <field name="tipo_pago" />
+                            <field name="descripcion" />
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="row">
+                                  <div class="col-7">
+                                         
+                                        <strong><field name="tipo_pago"/></strong>
+                                         <field name="descripcion" />
+                                        
+                                    </div>
+                                    
+                                </div>
+                               </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
+
+<!-- Actions defined for Tarjeta -->
+
+<record id="tarjeta_action_orders" model="ir.actions.act_window">
+            <field name="name">Lista de las Tarjetas</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">servicentro.tarjeta</field>
+            <field name="view_mode">kanban,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Insertar una Tarjeta Nueva
+                </p> 
+            </field>
+        </record>
+
+        <!-- Actions defined for ID Tarjeta  -->
+
+<record id="idtarjeta_action_orders" model="ir.actions.act_window">
+            <field name="name">Lista de ID Tarjeta</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">servicentro.idtarjeta</field>
+            <field name="view_mode">kanban,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Insertar una Nueva ID de Tarjeta 
+                </p> 
+            </field>
+        </record>
+
+<!-- Actions defined for Metodo Venta -->
+
+<record id="metodoventa_action_orders" model="ir.actions.act_window">
+            <field name="name">Lista de los Metodo Ventas</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">servicentro.metodoventa</field>
+            <field name="view_mode">kanban,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Insertar un nuevo metodo de venta
+                </p> 
+            </field>
+        </record>
+        
+
+<!-- Actions defined for Tipo Paga -->
+
+<record id="tipopaga_action_orders" model="ir.actions.act_window">
+            <field name="name">Lista de Tipo Paga</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">servicentro.tipopaga</field>
+            <field name="view_mode">kanban,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Insertar un nuevo tipo de paga
+                </p> 
+            </field>
+        </record>
+
+
+        <!-- Actions defined for Bines Tarjeta -->
+
+<record id="binestarjeta_action_orders" model="ir.actions.act_window">
+            <field name="name">Lista de Bines Tarjeta</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">servicentro.binestarjeta</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Insertar un nuevo Bines de Tarjeta
+                </p> 
+            </field>
+        </record>
+
+
+<!-- Menu Layout  -->
+ <!--
+
+             <menuitem id="menu-tarjetas"
+            name="Tarjetas"
+            parent="combustible_root"
+            sequence="10"/>
+-->
+            <menuitem id="tarjeta"
+            name="Nomencladores de Tarjeta"
+            parent="nomencladores"
+            action = "tarjeta_action_orders"
+            sequence="30"/>
+
+              <menuitem id="id-tarjeta"
+            name="Nomenclador Tipo de Identificacion Tarjeta"
+            parent="nomencladores"
+            action = "idtarjeta_action_orders"
+            sequence="30"/>
+
+            <menuitem id="metodo-venta"
+            name="Nomenclador de Metodor Venta"
+            parent="nomencladores"
+            action = "metodoventa_action_orders"
+            sequence="30"/>
+            
+            <menuitem id="tipo-paga"
+            name="Tipos de Paga"
+            parent="nomencladores"
+            action = "tipopaga_action_orders"
+            sequence="30"/>
+
+            <menuitem id="bines-tarjeta"
+            name="Configuraciones de Bines de Tarjeta"
+            parent="nomencladores"
+            action = "binestarjeta_action_orders"
+            sequence="30"/>
+            
+            
+</odoo>
